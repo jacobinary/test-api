@@ -1,7 +1,0 @@
-MANIFEST.in
-test_api.egg-info/PKG-INFO
-test_api.egg-info/SOURCES.txt
-test_api.egg-info/dependency_links.txt
-test_api.egg-info/not-zip-safe
-test_api.egg-info/requires.txt
-test_api.egg-info/top_level.txt
