@@ -1,22 +1,16 @@
 import os
-import importlib
+import config
 
 from flask import Flask
-
-ENV = os.environ.get('FLASK_ENV')
-
-if ENV is None:
-    ENV = 'development'
-
-config = importlib.import_module(f'config.{ENV}')
 
 # create and configure the app
 app = Flask(__name__, instance_relative_config=True)
 
-conf = config.get(app)
+config = config.load(app)
+
 app.config.from_mapping(
-    SECRET_KEY=conf['key'],
-    DATABASE=conf['db']
+    SECRET_KEY=config['app']['key'],
+    DATABASE=config['app']['db']
 )
 
 # ensure the instance folder exists
